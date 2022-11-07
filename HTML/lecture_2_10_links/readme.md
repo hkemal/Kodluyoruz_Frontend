@@ -8,4 +8,5 @@
   <li>Telefon et</li>
 </ol>
 href attribute'ü içine siteyi yazıyoruz
+
 **Not:** id lerimizi # ile classları . ile anlıyoruz
