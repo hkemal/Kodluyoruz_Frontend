@@ -32,7 +32,7 @@ console.log(typeof number3String);
 console.log(typeof 42);
 // beklenen output: "number"
 
-console.log(typeof 'kodluyoruz');
+console.log(typeof "kodluyoruz");
 //beklenen output: "string"
 
 console.log(typeof true);
@@ -42,69 +42,69 @@ console.log(typeof Variable);
 // beklenen output: "undefined"
 
 //isInteger( ) yöntemi, sayıların tam sayı olup olmadığını belirler.
-Number.isInteger(123) //true
-Number.isInteger(-123) //true
-Number.isInteger(0.5) //false
+Number.isInteger(123); //true
+Number.isInteger(-123); //true
+Number.isInteger(0.5); //false
 //isFinite () yöntemi, bir değerin sonlu bir sayı olup olmadığını belirler.
-Number.isFinite(0) //true
-Number.isFinite('123') //false
-Number.isFinite('Hello') //false
-Number.isFinite(-Infinity) //false
-Number.isFinite(0 / 0) //false
+Number.isFinite(0); //true
+Number.isFinite("123"); //false
+Number.isFinite("Hello"); //false
+Number.isFinite(-Infinity); //false
+Number.isFinite(0 / 0); //false
 // Number.isNaN () yöntemi, bir değerin NaN (Not-A-Number) olup olmadığını belirler.
 
-Number.isNaN(123) //false
-Number.isNaN(0) //false
-Number.isNaN('123') //false
-Number.isNaN('Hello') //false
-Number.isNaN('') //false
-Number.isNaN(true) //false
-Number.isNaN(undefined) //false
-Number.isNaN('NaN') //false
-Number.isNaN(NaN) //true
+Number.isNaN(123); //false
+Number.isNaN(0); //false
+Number.isNaN("123"); //false
+Number.isNaN("Hello"); //false
+Number.isNaN(""); //false
+Number.isNaN(true); //false
+Number.isNaN(undefined); //false
+Number.isNaN("NaN"); //false
+Number.isNaN(NaN); //true
 
-String(123) // “123”
-ParseInt(“123”) // 12
+String(123); // “123”
+ParseInt("123"); // 12
 
-If(3<5) // true
-console.log(" "+123) // “123”
-12/"6" // 2
+If(3 < 5); // true
+console.log(" " + 123); // “123”
+12 / "6"; // 2
 
-String(123) // “123” explicit
-123 + '' // “123”    implicit
+String(123); // “123” explicit
+123 + ""; // “123”    implicit
 
-String(123) // “123”
-String(-12.3) // “-12.3”
-String(null) // “null”
-String(undefined) // “undefined”
-String(true) // “true”
-String(false) // “false”
+String(123); // “123”
+String(-12.3); // “-12.3”
+String(null); // “null”
+String(undefined); // “undefined”
+String(true); // “true”
+String(false); // “false”
 
-String(Symbol('my symbol')) // 'Symbol(my symbol)'
-'' + Symbol('my symbol') // TypeError is thrown
+String(Symbol("my symbol")); // 'Symbol(my symbol)'
+"" + Symbol("my symbol"); // TypeError is thrown
 
-Boolean('') // false
-Boolean(0) // false 
-Boolean(-0) // false
-Boolean(NaN) // false
-Boolean(null) // false
-Boolean(undefined) // false
-Boolean(false) // false
+Boolean(""); // false
+Boolean(0); // false
+Boolean(-0); // false
+Boolean(NaN); // false
+Boolean(null); // false
+Boolean(undefined); // false
+Boolean(false); // false
 
 // veya “||” operatörü ilk bulduğu true değeri döner
-var a= 2 || s || 4 || 5; // 2
+var a = 2 || s || 4 || 5; // 2
 // eğer true dönecek değer bulamazsa en son buluğu false değeri döndürür
-var b=0 || ”” || false || -0 || 0 // 0
-var c= 0 ||  “”  ||  “ 123 ” || 4 ; // ”123” dolu string true dönecektir
+var b = 0 || "" || false || -0 || 0; // 0
+var c = 0 || "" || "123" || 4; // ”123” dolu string true dönecektir
 // ve ”&&” operatörü ilk bulduğu false değeri döner.
-var d=2 && 3 && 0 && 5 && 7; // 0
+var d = 2 && 3 && 0 && 5 && 7; // 0
 // eğer false dönecek değer bulamazsa en son buluğu true değeri döndürür
-var e= 2 && 3 && 5 && 7 // 7
+var e = 2 && 3 && 5 && 7; // 7
 
-console.log(Boolean({})) // true
-console.log(Boolean([])) // true
-console.log(Boolean([1,2,3])) // true
-console.log(Boolean({13:234})) //true
+console.log(Boolean({})); // true
+console.log(Boolean([])); // true
+console.log(Boolean([1, 2, 3])); // true
+console.log(Boolean({ 13: 234 })); //true
 
 // Primitif tipler için:
 
