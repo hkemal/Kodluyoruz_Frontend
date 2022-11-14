@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width="device-width", initial-scale=1.0">
+    <title>Data Object Model</title>
+  </head>
+  <body>
+    <div id="ornek">Volkan Alakent</div>
+    <br />
+    <button onclick="deneme()">Buraya tiklayiniz</button>
+    <script type="text/javascript" language="javascript">
+      //getElementById()
+      //kendisine parametre olarak verilen değer doğrultusunda, belge içerisindeki belirtilen id özelliğine / niteliğine sahip elemanların referansını elde etmek için kullanılır.
+      let sonuc = document.getElementById("ornek");
+      // sonuc.innerHTML = "JavaScript Eğitim Seti";
+      // sonuc = sonuc.innerHTML;
+      // alert(sonuc);
+
+      function deneme() {
+        document.getElementById("ornek").innerHTML = "JavaScript Eğitim Seti";
+      }
+    </script>
+  </body>
+</html>

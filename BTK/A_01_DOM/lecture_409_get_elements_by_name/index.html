@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Object Model</title>
+  </head>
+  <body>
+    <div>
+      <br />
+      Volkanın en sevdiği hayvan <span name="hayvan-adi">sibirya kurdudur.</span
+      ><br />
+      Onurun en sevdiği hayvan <span name="hayvan-adi">kedidir.</span> <br />
+      Aslının en sevdiği hayvan <span name="hayvan-adi">kuştur.</span><br />
+      Hayvan sayisi : <span id="hayvan-sayisi"></span>
+    </div>
+    <script type="text/javascript" language="javascript">
+      //getElementsByName()
+      //kendisine parametre olarak verilen değer doğrultusunda, belge içerisindeki belirtilen name özelliğine / niteliğine sahip tüm elemanların referansını elde etmek için kullanılır. Eleman referansları birden fazla ise her bir eleman döngü ile elde edilebilir.
+      let sonuc = document.getElementsByName("hayvan-adi").length;
+
+      document.getElementById("hayvan-sayisi").innerHTML = sonuc;
+    </script>
+  </body>
+</html>
