@@ -13,14 +13,26 @@
       ><br />
       Onurun en sevdiği hayvan <span name="hayvan-adi">kedidir.</span> <br />
       Aslının en sevdiği hayvan <span name="hayvan-adi">kuştur.</span><br />
-      Hayvan sayisi : <span id="hayvan-sayisi"></span>
+      Hayvan sayisi : <span id="hayvan-sayisi"></span> <br />
+      Hayvan adi : <span id="hayvan-adi"></span> <br />
+      Hayvanlar : <span id="hayvanlar-alani"></span> <br />
     </div>
     <script type="text/javascript" language="javascript">
       //getElementsByName()
       //kendisine parametre olarak verilen değer doğrultusunda, belge içerisindeki belirtilen name özelliğine / niteliğine sahip tüm elemanların referansını elde etmek için kullanılır. Eleman referansları birden fazla ise her bir eleman döngü ile elde edilebilir.
       let sonuc = document.getElementsByName("hayvan-adi").length;
+      let bilgi = document.getElementsByName("hayvan-adi");
+      let result = bilgi[0].innerHTML;
+
+      let hayvanlar = [];
+      for (let i = 0; i < bilgi.length; i++) {
+        let hayvan_adi = bilgi[i].innerHTML;
+        hayvanlar[i] = hayvan_adi;
+      }
 
       document.getElementById("hayvan-sayisi").innerHTML = sonuc;
+      document.getElementById("hayvan-adi").innerHTML = result;
+      document.getElementById("hayvanlar-alani").innerHTML = hayvanlar;
     </script>
   </body>
 </html>

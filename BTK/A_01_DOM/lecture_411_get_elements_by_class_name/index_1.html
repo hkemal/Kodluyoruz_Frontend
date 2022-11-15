@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Object Model</title>
+    <style>
+      div {
+        border: 1px solid black;
+        margin: 5px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bicimlendirme">Html Eğitim Seti</div>
+    <div class="bicimlendirme">Css Eğitim Seti</div>
+    <div class="bicimlendirme">JS Eğitim Seti</div>
+    <div class="bicimlendirme2">Java Eğitim Seti</div>
+    <div class="bicimlendirme2">C# Eğitim Seti</div>
+    <div class="bicimlendirme2">NodeJs Eğitim Seti</div>
+
+    <br /><br /><br />
+    <p id="islem-sonucu"></p>
+    <script type="text/javascript" language="javascript">
+      //getElementsByClassName()
+      //kendisine parametre olarak verilen değer doğrultusunda, belge içerisindeki belirtilen class(sınıf) adına sahip tüm elemanların referansını elde etmek için kullanılır. Eleman referansları birden fazla ise her bir eleman döngü ile elde edilebilir.
+
+      let classAttribute = document.getElementsByClassName("bicimlendirme2");
+      document.getElementById("islem-sonucu").innerHTML = classAttribute.length;
+      document.getElementsByTagName("LI")[0].innerHTML = "HTML 5";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Object Model</title>
+  </head>
+  <body>
+    <div>
+      İlgi alanlariniz : <br />
+      Alışveriş
+      <input name="ilgi-alanlari" type="checkbox" value="Alışveriş" /> Eğlence
+      <input name="ilgi-alanlari" type="checkbox" value="Eğlence" /> Sinema
+      <input name="ilgi-alanlari" type="checkbox" value="Sinema" /> Tiyatro
+      <input name="ilgi-alanlari" type="checkbox" value="Tiyatro" /> Gezi
+      <input name="ilgi-alanlari" type="checkbox" value="Gezi" /> Internet
+      <input name="ilgi-alanlari" type="checkbox" value="Internet" /> Yüzme
+      <input name="ilgi-alanlari" type="checkbox" value="Yüzme" />
+      <br />
+      <button onclick="secmeIslemi()">Hepsini seç</button>
+      <button onclick="kaldirmaIslemi()">Hepsini kaldir</button>
+    </div>
+    <script type="text/javascript" language="javascript">
+      //getElementsByName()
+      //kendisine parametre olarak verilen değer doğrultusunda, belge içerisindeki belirtilen name özelliğine / niteliğine sahip tüm elemanların referansını elde etmek için kullanılır. Eleman referansları birden fazla ise her bir eleman döngü ile elde edilebilir.
+      function secmeIslemi() {
+        let deger = document.getElementsByName("ilgi-alanlari");
+        for (let i = 0; i < deger.length; i++) {
+          deger[i].checked = true;
+        }
+      }
+      function kaldirmaIslemi() {
+        let deger = document.getElementsByName("ilgi-alanlari");
+        for (let i = 0; i < deger.length; i++) {
+          deger[i].checked = false;
+        }
+      }
+    </script>
+  </body>
+</html>

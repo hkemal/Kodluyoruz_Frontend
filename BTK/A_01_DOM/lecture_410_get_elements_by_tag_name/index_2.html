@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Object Model</title>
+  </head>
+  <body>
+    <div> <span>Volkan Alakent</span></div>
+      <p> <span>Eğitimler</span>
+        <ul>
+          <li>Html</li>
+          <li>Css</li>
+          <li>JS</li>
+          <li>Java</li>
+          <li>C#</li>
+        </ul>
+      </p>
+    
+    <br><br><br>
+    <div id="sonuc">
+
+    </div>
+    <script type="text/javascript" language="javascript">
+      //getElementsByTagName()
+      //kendisine parametre olarak verilen değer doğrultusunda, belge içerisindeki belirtilen tag(etiket) adına sahip tüm elemanların referansını elde etmek için kullanılır. Eleman referansları birden fazla ise her bir eleman döngü ile elde edilebilir.
+
+      let liTags = document.getElementsByTagName("LI");
+        for (let i = 0; i < liTags.length; i++) {
+          document.getElementById("sonuc").innerHTML+=liTags[i].innerHTML+" <br/>"
+        }
+      let allTags = document.getElementsByTagName("*");//html tag'ından başlayarak bütün taglara ulaşır 
+      for(let i = 0; i<allTags.length;i++){
+        console.log("*************")
+        console.log(allTags[i].tagName)
+        console.log("*************")
+        console.log(allTags[i].innerHTML)
+        console.log("------------")
+      }
+      
+    </script>
+  </body>
+</html>
