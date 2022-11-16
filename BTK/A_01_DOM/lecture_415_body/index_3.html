@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Object Model</title>
+  </head>
+  <body>
+    <button onclick="islemSari()">Sari</button><br />
+    <button onclick="islemSiyah()">Siyah</button><br />
+    <button onclick="islemMavi()">Mavi</button><br />
+    <button onclick="islemKirmizi()">Kirmizi</button><br />
+    <button onclick="islemYesil()">Yesil</button><br />
+    <button onclick="islemBeyaz()">Beyaz</button><br />
+    <button onclick="islemRandom()">Random</button><br />
+
+    <script type="text/javascript" language="javascript">
+      //body
+      //belge içerisindeki body tag'ının (etiketinin) referansını elde etmek için kullanılır.
+
+      islemSari = () => {
+        let documentBody = document.body;
+        documentBody.style.backgroundColor = "yellow";
+      };
+
+      islemSiyah = () => {
+        let documentBody = document.body;
+        documentBody.style.backgroundColor = "black";
+      };
+
+      islemMavi = () => {
+        let documentBody = document.body;
+        documentBody.style.backgroundColor = "blue";
+      };
+
+      islemKirmizi = () => {
+        let documentBody = document.body;
+        documentBody.style.backgroundColor = "red";
+      };
+
+      islemYesil = () => {
+        let documentBody = document.body;
+        documentBody.style.backgroundColor = "green";
+      };
+
+      islemBeyaz = () => {
+        let documentBody = document.body;
+        documentBody.style.backgroundColor = "white";
+      };
+
+      islemRandom = () => {
+        let colors = ["#ff0000", "#00ff00", "#0000ff"];
+        let random_color = colors[Math.floor(Math.random() * colors.length)];
+        let documentBody = document.body;
+        documentBody.style.backgroundColor = random_color;
+      };
+    </script>
+  </body>
+</html>

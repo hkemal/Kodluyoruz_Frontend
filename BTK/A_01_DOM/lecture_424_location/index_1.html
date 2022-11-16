@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Object Model</title>
+  </head>
+  <body>
+    <div id="sonuc1"></div>
+    <div id="sonuc2"></div>
+    <div id="sonuc3"></div>
+    <script type="text/javascript" language="javascript">
+      //location
+      //belge URL(Uniform Resource Locator, Nizami Kaynak Bulucu) referansını elde etmek için ve ayarlamak için kullanılır
+
+      let documentLocation = document.location;
+      document.querySelector("#sonuc1").innerHTML = documentLocation;
+      document.querySelector("#sonuc2").innerHTML = documentLocation.href;
+      let newAddress = (documentLocation.href = "http://www.google.com.tr");
+      let mailAddress = (documentLocation.href = "mailto:info@info.com");
+
+      document.write(newAddress);
+    </script>
+  </body>
+</html>
