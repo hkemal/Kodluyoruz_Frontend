@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Object Model</title>
+  </head>
+  <body onclick="activeElemaniBul()">
+    <div>
+      <span>Isim Soyisim:</span>
+      <input type="text" />
+      <button>Kaydet</button>
+    </div>
+    <script type="text/javascript" language="javascript">
+      //activeElement
+      //belge içerisindeki seçili veya odaklanılmış elemanın referansını elde etmek için kullanılır
+
+      let activeElemaniBul = () => {
+        let documentActiveElement = document.activeElement.tagName;
+        alert(documentActiveElement);
+      };
+    </script>
+  </body>
+</html>
