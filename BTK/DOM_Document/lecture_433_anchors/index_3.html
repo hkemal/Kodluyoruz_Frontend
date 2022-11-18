@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Object Model</title>
+  </head>
+  <body>
+    <div>
+      <a
+        id="anchorOne"
+        name="anchorName"
+        href="https://www.google.com.tr/search?q=lorem"
+        >Lorem</a
+      ><br />
+      <a
+        id="anchorTwo"
+        name="anchorName"
+        href="https://www.google.com.tr/search?q=corrupti"
+        >Corrupti</a
+      ><br />
+      <a
+        id="anchorThree"
+        name="anchorName"
+        href="https://www.google.com.tr/search?q=illo"
+        >Illo</a
+      ><br />
+      <a
+        id="anchorFour"
+        name="anchorName"
+        href="https://www.google.com.tr/search?q=ut"
+        >Ut</a
+      ><br />
+      <a
+        id="anchorFive"
+        name="anchorName"
+        href="https://www.google.com.tr/search?q=illum"
+        >Illum</a
+      ><br />
+      <div>
+        <span> Anchor contents : </span><span id="anchorContents"></span>
+      </div>
+    </div>
+    <script type="text/javascript" language="javascript">
+      //anchors
+      //belge içerisindeki çapa tag'ına(a etiketi) sahip tüm elemanlarınr referansını elde etmek için kullanılır
+      //Elemanların referansı birden fazla ise her bir eleman döngü ile elde edilebilir.
+
+      let documentAnchors = document.anchors;
+      let anchs = [...documentAnchors];
+      let anchContents = anchs.map((anch) => {
+        return anch.innerHTML;
+      });
+      document.querySelector("#anchorContents").innerHTML = anchContents;
+    </script>
+  </body>
+</html>
