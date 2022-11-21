@@ -8,10 +8,87 @@
   </head>
   <body>
     <h1>Data Object Model</h1>
+    <button id="islemButton" onclick="makeMeGreenBorder()">Tiklayiniz</button>
+    <br />
+    <a
+      id="anchorOne"
+      name="anchorName"
+      href="https://www.google.com.tr/search?q=lorem"
+      >Lorem</a
+    ><br />
+    <a
+      id="anchorTwo"
+      name="anchorName"
+      href="https://www.google.com.tr/search?q=corrupti"
+      >Corrupti</a
+    ><br />
+    <a
+      id="anchorThree"
+      name="anchorName"
+      href="https://www.google.com.tr/search?q=illo"
+      >Illo</a
+    ><br />
+    <a
+      id="anchorFour"
+      name="anchorName"
+      href="https://www.google.com.tr/search?q=ut"
+      >Ut</a
+    ><br />
+    <a
+      id="anchorFive"
+      name="anchorName"
+      href="https://www.google.com.tr/search?q=illum"
+      >Illum</a
+    ><br />
+    <div>
+      <span>Link sayisi : </span>
+      <span id="linkCount">0</span>
+    </div>
+    <div>
+      <span>İkinci Link : </span>
+      <span id="secLink"></span>
+    </div>
+    <div>
+      <span>Üçüncü Link : </span>
+      <span id="thrLink"></span>
+    </div>
+    <div>
+      <span>Dördüncü Link : </span>
+      <span id="frtLink"></span>
+    </div>
+    <div>
+      <ul id="allLinks">
+        All Links
+      </ul>
+    </div>
     <script type="text/javascript" language="javascript">
       //links
       //Belge içereisindeki tüm linklerin referansını elde etmek için kullanılır.
       //Referanslar birden fazla ise her bir link referansı döngü ile elde edilebilir
+
+      let documentLinks = document.links;
+      let linkCount = documentLinks.length;
+      document.getElementById("linkCount").innerHTML = documentLinks.length;
+
+      let secondLinkDOM = document.links[1];
+      document.getElementById("secLink").innerHTML = secondLinkDOM.href;
+
+      let thirdLinkDOM = document.links.item(2);
+      document.getElementById("thrLink").innerHTML = thirdLinkDOM.href;
+
+      let fourthLinkDOM = document.links.namedItem("anchorFour");
+      document.getElementById("frtLink").innerHTML = fourthLinkDOM.href;
+
+      let makeMeGreenBorder = () => {
+        document.links[2].style.border = "3px solid green";
+      };
+
+      let ulDom = document.querySelector("#allLinks");
+      for (let i = 0; i < documentLinks.length; i++) {
+        let liDom = document.createElement("li");
+        liDom.innerHTML = document.links.item(i);
+        ulDom.appendChild(liDom);
+      }
     </script>
   </body>
 </html>
