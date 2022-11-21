@@ -1,16 +1,34 @@
-let arrayObj = [1, 2, 3];
-let object1 = { obj: 1 };
+let laptop1 = {
+  brand: "Apple",
+  model: "Macbook",
+  "2kg": 2,
+  modelName: "Macbook Pro",
+};
 
-console.log("arrayObj ", typeof arrayObj);
-console.log("object1 ", typeof object1);
+console.log(laptop1);
+console.log(laptop1.brand);
+console.log(laptop1.model);
+console.log(laptop1["2kg"]);
+console.log(laptop1.modelName);
 
-let item1 = new Object();
-let item2 = {};
-console.log("item1", typeof item1);
-console.log("item2", typeof item2);
+laptop1.brand = "Mac";
+laptop1["brand"] = "Mac";
+console.log(laptop1);
 
-//Object oluşturmak
-let item3 = {};
-let item4 = new Object();
+laptop1.version = "10.15.7";
+console.log(laptop1);
 
-console.log("object1", object1);
+keys = Object.keys(laptop1);
+console.log(keys);
+console.log(Object.keys(laptop1));
+
+keys.forEach((key) => {
+  console.log(key);
+  console.log(laptop1[key]);
+  console.log("*********");
+});
+
+values = Object.values(laptop1);
+values.forEach((value) => {
+  console.log("value : ", value);
+});
