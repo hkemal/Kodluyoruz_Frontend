@@ -73,80 +73,86 @@ const menu = [
   },
 ];
 
-let allBtn = document.querySelector("#All");
-let koreaBtn = document.querySelector("#Korea");
-let japanBtn = document.querySelector("#Japan");
-let chınaBtn = document.querySelector("#China");
+let allButtonDoms = document.querySelector(".btn-container");
+let buttonNames = ["All", "Korea", "Japan", "China"];
 
-allBtn.addEventListener("click", click);
-koreaBtn.addEventListener("click", click);
-japanBtn.addEventListener("click", click);
-chınaBtn.addEventListener("click", click);
+buttonNames.forEach((buttonName) => {
+  let buttonDom = document.createElement("button");
+  buttonDom.id = buttonName;
+  buttonDom.innerHTML = buttonName;
+  buttonDom.classList = "btn-item btn btn-outline-dark d-inline";
+  buttonDom.addEventListener("click", click);
 
-// ALL MENU FUNCTİON
-function array(arrayName) {
-  arrayName.map((index) => {
-    let menuDOM = document.querySelector(".section-center");
+  let buttonLocationDom = document.querySelector(".btn-container");
+  buttonLocationDom.appendChild(buttonDom);
+});
 
-    let divGeneral = document.createElement("div");
-    divGeneral.classList = "menu-items col-6  ";
-    menuDOM.appendChild(divGeneral);
+function createContent(contents) {
+  contents.map((content) => {
+    let contentDom = document.querySelector(".section-center");
+
+    let eachContent = document.createElement("div");
+    eachContent.classList = "menu-items col-6  ";
+    contentDom.appendChild(eachContent);
 
     let img = document.createElement("img");
     img.classList = "photo";
-    img.src = index.img;
-    divGeneral.appendChild(img);
+    img.src = content.img;
+    eachContent.appendChild(img);
 
-    let divİnfo = document.createElement("div");
-    divİnfo.classList = "menu-info";
-    divGeneral.appendChild(divİnfo);
+    let contentInfo = document.createElement("div");
+    contentInfo.classList = "menu-info";
+    eachContent.appendChild(contentInfo);
 
-    let divTittle = document.createElement("div");
-    divTittle.classList = "menu-title";
-    divİnfo.appendChild(divTittle);
+    let contentTitle = document.createElement("div");
+    contentTitle.classList = "menu-title";
+    contentInfo.appendChild(contentTitle);
 
     let tittle = document.createElement("h4");
     let price = document.createElement("h4");
-    tittle.innerHTML = index.title;
+    tittle.innerHTML = content.title;
 
     price.classList = "price";
-    price.innerHTML = index.price;
-    divTittle.appendChild(tittle);
-    divTittle.appendChild(price);
+    price.innerHTML = content.price;
+    contentTitle.appendChild(tittle);
+    contentTitle.appendChild(price);
 
-    let divText = document.createElement("div");
-    divText.classList = "menu-text";
-    divText.innerHTML = index.desc;
-    divİnfo.appendChild(divText);
+    let contentText = document.createElement("div");
+    contentText.classList = "menu-text";
+    contentText.innerHTML = content.desc;
+    contentInfo.appendChild(contentText);
   });
 }
 
-// CATEGORİES ARRAY (reduce method)
-let grup = "category";
-sorting = menu.reduce((acc, menuElemanı) => {
-  let key = menuElemanı[grup];
-
-  if (!acc[key]) {
-    acc[key] = [];
-  }
-  acc[key].push(menuElemanı);
-  return acc;
-}, {});
-
-// BUTTONS CLİCK FUNCTİON
-
 let body = document.querySelector(".section-center");
 function click() {
+  console.log(this.id);
   while (body.hasChildNodes()) {
     body.removeChild(body.firstChild);
   }
+  let content;
   if (this.id == "All") {
-    array(menu);
+    content = filteredContent("All");
+    createContent(content);
   } else if (this.id == "Korea") {
-    array(sorting.Korea);
+    content = filteredContent("Korea");
+    createContent(content);
   } else if (this.id == "Japan") {
-    array(sorting.Japan);
+    content = filteredContent("Japan");
+    createContent(content);
   } else if (this.id == "China") {
-    array(sorting.China);
+    content = filteredContent("China");
+    createContent(content);
   }
+}
+
+function filteredContent(value) {
+  console.log(value);
+  if (value === "All") return menu;
+  else if (value === "Korea")
+    return menu.filter((menuItem) => menuItem.category === value);
+  else if (value === "Japan")
+    return menu.filter((menuItem) => menuItem.category === value);
+  else if (value === "China")
+    return menu.filter((menuItem) => menuItem.category === value);
 }
