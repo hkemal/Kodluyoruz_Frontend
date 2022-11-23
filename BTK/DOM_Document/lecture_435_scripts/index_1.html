@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html" ;charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <script id="first" type="text/javascript" language="javascript">
+      document.write("Javascript");
+    </script>
+    <br />
+    Döküman içindeki script tagı sayisi :
+    <script id="second" type="text/javascript" language="javascript">
+      //scripts
+      //Belge içereisindeki script tag'ına(etiketine)sahip rüm elemanların referansını elde etmek için kullanılır.
+      //Referanslar birden fazla ise her bir link referansı döngü ile elde edilebilir
+
+      let documentScripts = document.scripts;
+      //script tagı sayısı
+      document.write(documentScripts.length);
+      document.write("<br />");
+      document.write("Javascript içeriği : ");
+      //scrpit tagı içeriğini görüntülüyebiliyoruz
+      // document.write(documentScripts[0].text);
+      // document.write(documentScripts.item(0).text);
+      document.write(documentScripts.namedItem("first").text);
+
+      let copydocumentScripts = [...documentScripts];
+      copydocumentScripts.forEach((documentScript) => {
+        console.log(documentScript.text);
+        console.log(documentScript.text.length);
+        console.log("**************");
+      });
+    </script>
+  </body>
+</html>

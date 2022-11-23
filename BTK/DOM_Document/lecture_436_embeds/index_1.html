@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html" ;charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <embed id="first" type="image/jpg" src="https://picsum.photos/200/300" />
+    <embed id="second" type="image/jpg" src="https://picsum.photos/300/300" />
+    <embed id="third" type="image/jpg" src="https://picsum.photos/400/300" />
+
+    <div id="results"></div>
+    <script type="text/javascript" language="javascript">
+      //embeds
+      //Belge içereisindeki embed veya object tag'ına sahip tüm elemanların referansını elde etmek için kullanılır.
+      //Referanslar birden fazla ise her bir link referansı döngü ile elde edilebilir
+
+      let documentEmbeds = document.embeds;
+      //kaç tane var
+      console.log(`tag sayisi : ${documentEmbeds.length}`);
+      //src si ne
+      console.log(`tag içeriği(src) : ${documentEmbeds[0].src}`);
+      console.log(`tag içeriği(src) : ${documentEmbeds.item(1).src}`);
+      console.log(
+        `tag içeriği(src) : ${documentEmbeds.namedItem("third").src}`
+      );
+      //width değerini ayarlayabiliyoruz
+      documentEmbeds[0].width = 300;
+      //height değerini ayarlayabiliyoruz
+      documentEmbeds[0].height = 300;
+
+      let copyDocumentEmbeds = [...documentEmbeds];
+      copyDocumentEmbeds.forEach((item) => {
+        item.width = 100;
+        item.height = 100;
+      });
+    </script>
+  </body>
+</html>
