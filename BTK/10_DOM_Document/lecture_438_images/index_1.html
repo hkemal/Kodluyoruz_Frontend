@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html" ;charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <img
+      id="first-pic"
+      src="https://picsum.photos/100/300"
+      alt="lorem-picsum"
+    />
+    <img
+      id="second-pic"
+      src="https://picsum.photos/150/300"
+      alt="lorem-picsum"
+    />
+    <img
+      id="third-pic"
+      src="https://picsum.photos/200/300"
+      alt="lorem-picsum"
+    />
+
+    <div id="sonuc"></div>
+
+    <script type="text/javascript" language="javascript">
+      //forms
+      //Belge içereisindeki img tag'ına sahip elemanların referansını elde etmek için kullanılır.
+      //Referanslar birden fazla ise her bir link referansı döngü ile elde edilebilir
+
+      let documentImages = document.images;
+
+      document.getElementById("sonuc").innerHTML =
+        "<br />" + "Resim sayisi : " + documentImages.length;
+
+      document.getElementById("sonuc").innerHTML +=
+        "<br />" + "İlk Resim id'si : " + documentImages[0].id;
+
+      document.getElementById("sonuc").innerHTML +=
+        "<br />" + "İkinci Resim pathi : " + documentImages.item(1).src;
+
+      document.getElementById("sonuc").innerHTML +=
+        "<br />" +
+        "Üçüncü Resim pathi : " +
+        documentImages.namedItem("third-pic").src;
+
+      let copyDocumentImages = [...documentImages];
+
+      copyDocumentImages.forEach((image) => {
+        console.log("****************");
+        console.log("id : " + image.id);
+        console.log("****************");
+        console.log(image.src);
+        console.log("****************");
+      });
+
+      copyDocumentImages.forEach((image) => {
+        image.height = 100;
+        image.width = 100;
+      });
+    </script>
+  </body>
+</html>
