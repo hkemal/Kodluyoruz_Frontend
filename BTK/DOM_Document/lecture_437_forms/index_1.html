@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html" ;charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <form id="birinci-form">
+      Adi Soyadi :
+      <input
+        type="text"
+        id="birinci-metin-kutusu"
+        name="metin-kutusu-bir"
+      /><br />
+      Şehir :
+      <input
+        type="text"
+        id="ikinci-metin-kutusu"
+        name="metin-kutusu-iki"
+      /><br />
+      <button>Kaydet</button>
+    </form>
+    <br /><br /><br />
+    <form id="ikinci-form">
+      Web Sitesi :
+      <input
+        type="text"
+        id="birinci-websitesi-kutusu"
+        name="web-sitesi-bir"
+      /><br />
+      E-mail Adresi :
+      <input
+        type="text"
+        id="birinci-email-kutusu"
+        name="eöail-kutusu-bir"
+      /><br />
+      <button>Kaydet</button>
+    </form>
+    <br />
+
+    <div id="sonuc"></div>
+    <script type="text/javascript" language="javascript">
+      //forms
+      //Belge içereisindeki form tag'ına sahip elemanların referansını elde etmek için kullanılır.
+      //Referanslar birden fazla ise her bir link referansı döngü ile elde edilebilir
+
+      let documentForms = document.forms;
+      document.getElementById("sonuc").innerHTML =
+        "<br />" + "Form sayisi : " + documentForms.length;
+
+      document.getElementById("sonuc").innerHTML +=
+        "<br />" + "İlk Form id'si : " + documentForms[0].id;
+
+      document.getElementById("sonuc").innerHTML +=
+        "<br />" + "İkinci Form id'si : " + documentForms.item(1).id;
+
+      document.getElementById("sonuc").innerHTML +=
+        "<br />" +
+        "Birici Formun içeriği : " +
+        documentForms.namedItem("birinci-form").innerHTML;
+
+      let copyDocumentForms = [...documentForms];
+
+      copyDocumentForms.forEach((documentForm) => {
+        console.log("****************");
+        console.log("id" + documentForm.id);
+        console.log("****************");
+        console.log(documentForm.innerHTML);
+        console.log("****************");
+      });
+    </script>
+  </body>
+</html>
