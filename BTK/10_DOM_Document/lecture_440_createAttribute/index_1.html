@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html" ;charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+    <style>
+      .demo {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Javascript Eğitim Seti</h2>
+    <div>Anlatan Volkan Alakent</div>
+    <br />
+    <a id="first-anchor" href="">No Href Anchor</a>
+    <br />
+    <br />
+    <button onclick="makeBlue()">Uygula</button>
+
+    <script type="text/javascript" language="javascript">
+      //createAttiribute()
+      //Belge içerisindeki istenilen bir elemana yeni bir özellik/nitelik node'u(düğümü) oluşturur.
+      //Oluşturduğu bu node'u(düğümü) bir node object olarak geriye döndürür.
+      //setAttributeNode
+      //createAttribute() metodu ile oluşturulan özellik node'unu(düğümünü), node object'ine(düğüm nesnesine) uygular.
+
+      function makeBlue() {
+        let h2DOM = document.getElementsByTagName("h2")[0];
+        let newAttribute = document.createAttribute("class");
+        newAttribute.value = "demo";
+        h2DOM.setAttributeNode(newAttribute);
+      }
+
+      let anchorDOM = document.getElementById("first-anchor");
+      let newHref = document.createAttribute("href");
+      newHref.value = "http://google.com.tr";
+      anchorDOM.setAttributeNode(newHref);
+    </script>
+  </body>
+</html>
