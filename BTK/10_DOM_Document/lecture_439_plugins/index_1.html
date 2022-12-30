@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html" ;charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <div id="sonuc"></div>
+
+    <script type="text/javascript" language="javascript">
+      //plugins
+      //Browser'daki tüm eklentilerin referansını elde etmek için kullanılır
+      //Eklenti referansları birden fazla ise her bir link referansı döngü ile elde edilebilir
+
+      let navigatorPlugins = navigator.plugins;
+
+      document.getElementById("sonuc").innerHTML =
+        "<br />" +
+        "Toplan Plugin sayisi : " +
+        navigatorPlugins.length +
+        "<br />";
+
+      let copyNavigatorPlugins = [...navigatorPlugins];
+
+      copyNavigatorPlugins.forEach((item) => {
+        document.getElementById("sonuc").innerHTML +=
+          "<br />" +
+          "Plugin adi : " +
+          item.name +
+          "<br />" +
+          "Plugin dosya adi : " +
+          item.filename +
+          "<br />" +
+          "Plugin açıklama : " +
+          item.description;
+
+        let copyItem = [...item];
+        document.getElementById("sonuc").innerHTML +=
+          "<br />" + "Pluggin alt ogeler uzunluğu : " + copyItem.length;
+
+        copyItem.forEach((it) => {
+          document.getElementById("sonuc").innerHTML +=
+            "<br />" +
+            "Mime Type : " +
+            it.type +
+            "<br />" +
+            "Alt Açiklama : " +
+            it.description +
+            "<br />" +
+            "Uzantı : " +
+            it.suffixes;
+        });
+        document.getElementById("sonuc").innerHTML += "<hr />";
+      });
+    </script>
+  </body>
+</html>

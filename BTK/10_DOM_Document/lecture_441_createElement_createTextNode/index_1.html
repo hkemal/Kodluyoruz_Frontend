@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html" ;charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <button onclick="addText()">Add Text</button>
+    <div id="result"></div>
+    <script type="text/javascript" language="javascript">
+      //createElement()
+      //Belge içerisindeki yeni bir HTML eleman node'u(düğümü) oluşturur.
+      //Oluşturduğu bu node'u(düğümü) bir node object olarak geriye döndürür.
+      //
+      //createTextNode()
+      //createElement() metodu ile oluşturulan html elemanına metin node'unu(düğümünü) oluşturur.
+      //Oluşturduğu node'u object'ine(düğüm nesnesine) uygular.
+      //
+      //appendChild()
+      //Bir node'u(düğümü) belirtecek olan herhangi bir elemanın içerisine en sonda olmak üzere eklemek için kullanılır.
+
+      let newElement = document.createElement("button");
+      let newText = document.createTextNode("Tiklayiniz");
+      newElement.appendChild(newText);
+      document.body.appendChild(newElement);
+      function addText() {
+        let newDiv = document.createElement("div");
+        let newText = document.createTextNode("Yeni değer eklendi");
+        newDiv.appendChild(newText);
+        document.body.appendChild(newDiv);
+      }
+    </script>
+  </body>
+</html>
