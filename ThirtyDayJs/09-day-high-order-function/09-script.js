@@ -21,7 +21,7 @@ const a = (s1) => {
 const numbers = [1, 3, 5, 7, 9];
 let total = 0;
 numbers.forEach((number) => (total += number));
-console.log(total);
+//console.log(total);
 
 function sayHello() {
   console.log("Hello");
@@ -29,13 +29,18 @@ function sayHello() {
 const interval = setInterval(sayHello, 1000);
 //clearInterval
 
-function sayWorld() {
-  console.log("World");
-}
-setTimeout(sayWorld, 5000);
-//clearTimeout
-
 setTimeout(() => {
   clearInterval(interval);
   console.log("interval iptal edildi");
 }, 5000);
+
+function sayWorld() {
+  console.log("World");
+}
+const timeout = setTimeout(sayWorld, 5000);
+//clearTimeout
+
+setTimeout(() => {
+  clearTimeout(timeout);
+  console.log("timeout işlemi iptal edildi");
+}, 3000);
