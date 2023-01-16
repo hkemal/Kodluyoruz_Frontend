@@ -1,42 +1,23 @@
-let h1TagName = document.getElementsByTagName("h1");
+for (let i = 1; i <= 10; i++) {
+  let h1DOM = document.createElement("h1");
+  h1DOM.className = "test";
+  h1DOM.style.backgroundColor = randomColor();
+  h1DOM.style.color = randomColor();
+  h1DOM.innerHTML = " Bu <i>JS</i> ile eklendi " + i;
+  document.body.appendChild(h1DOM);
+}
 
-[...h1TagName].forEach((element) => console.log(element.innerHTML));
-console.log("****************");
+//document.body => doğrudan body'ye ulaşmamızı sağlar
 
-let h1ClassName = document.getElementsByClassName("title-1");
-console.log(h1ClassName);
-console.log("****************");
+const allH1DOM = document.querySelectorAll("h1");
+for (const h1 of allH1DOM) {
+  h1.remove();
+}
 
-const title = document.getElementById("title");
-// title.style.color = "blue";
-// title.style.backgroundColor = "yellow";
-// title.title = "test baslik";
-// title.className = "adana";
-title.setAttribute("style", "color:blue; background-color:yellow");
-title.setAttribute("title", "test baslik");
-title.setAttribute("classList", "adana"); //eski class'ları eziyor
-title.classList.add("adana"); //var olanın üstüne ekliyor
-title.classList.remove("adana"); //class'ı kaldır
-title.classList.toggle("adana"); //yoksa ekle varsa çıkart
-title.textContent = "Yeni değer"; //düz yazı eklemek istersek
-title.innerHTML = "Yeni değer <u>test</u>"; //html olarak eklemek istersek
-
-console.log(title);
-console.log("****************");
-
-console.log(document.querySelector("#title"));
-console.log("****************");
-
-document.querySelectorAll(".title-1").forEach((item) => {
-  console.log(item);
-});
-console.log("****************");
-
-document.querySelectorAll("h1").forEach((item, index) => {
-  if (index % 2 === 0) {
-    item.style.color = "green";
-    item.style.fontSize = "35px";
-  } else {
-    item.style.color = "yellow";
-  }
-});
+function randomColor() {
+  var x = Math.floor(Math.random() * 256);
+  var y = Math.floor(Math.random() * 256);
+  var z = Math.floor(Math.random() * 256);
+  var color = "rgb(" + x + "," + y + "," + z + ")";
+  return color;
+}
