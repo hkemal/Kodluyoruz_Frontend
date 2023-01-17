@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .error {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form" onsubmit="return false">
+      <input type="color" id="color-picker" /><br />
+      <input type="text" id="name" placeholder="Adinizi yazin" /><br />
+      <select id="gender">
+        <option value="">Sec</option>
+        <option value="Erkek">Erkek</option>
+        <option value="Kadin">Kadin</option>
+      </select>
+      <br />
+      <label>
+        <input type="checkbox" id="save-rules" />
+        Kurallari kabul ediyorum
+      </label>
+      <div>
+        <label> <input type="radio" name="stack" value="lamp" />lamp</label>
+        <label> <input type="radio" name="stack" value="wamp" />wamp</label>
+      </div>
+    </form>
+    <br />
+    <button id="save-btn">Save Button</button>
+    <hr />
+    <button id="btn-1">Click Me 1</button>
+    <button id="btn-2" onclick="clickHandle(this)">Click Me 2</button>
+    <br />
+    <img src="https://picsum.photos/200/200" />
+    <script src="23-dom.js"></script>
+  </body>
+</html>
