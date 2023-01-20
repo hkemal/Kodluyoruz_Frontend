@@ -45,7 +45,7 @@ userTwo = userOne;
 console.log(userOne == userTwo); // true
 
 //Numbers
-let age = 35;
+let age10 = 35;
 const gravity = 9.81; // we use const for non-changing values, gravitational constant in  m/s2
 let mass = 72; // mass in Kilogram
 const PI = 3.14; // pi a geometrical constant
@@ -54,7 +54,7 @@ const PI = 3.14; // pi a geometrical constant
 const boilingPoint = 100; // temperature in oC, boiling point of water which is a constant
 const bodyTemp = 37; // oC average human body temperature, which is a constant
 
-console.log(age, gravity, mass, PI, boilingPoint, bodyTemp);
+console.log(age10, gravity, mass, PI, boilingPoint, bodyTemp);
 
 //Math Object
 PI = Math.PI;
