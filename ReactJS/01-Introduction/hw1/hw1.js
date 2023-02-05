@@ -1,6 +1,6 @@
-import axios from 'axios.js';
+import axios from 'axios';
 
-export default getUserInfos = (user_id) => {
+export default (user_id) => {
   return new Promise(async (resolve, reject) => {
     const { data: user } = await axios(
       `https://jsonplaceholder.typicode.com/users/${user_id}`
@@ -12,8 +12,3 @@ export default getUserInfos = (user_id) => {
     resolve(result);
   });
 };
-
-(async () => {
-  let user1Infos = await getUserInfos(1);
-  console.log(user1Infos);
-})();
