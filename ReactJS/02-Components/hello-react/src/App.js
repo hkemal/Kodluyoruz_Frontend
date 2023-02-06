@@ -4,6 +4,7 @@ import Header from "./components/Header";
 
 const name = "Mehmet";
 const surname = "Seven";
+const isLoggedIn = false;
 
 function App() {
   // return React.createElement("div", null, "Hello");
@@ -22,7 +23,11 @@ function App() {
     //   </label>
     // </div>
     <div>
-      <h1>{`Benim adim ${name} soyadim ${surname}`}</h1>
+      <h1>
+        {isLoggedIn
+          ? `Benim adim ${name} soyadim ${surname}`
+          : "Giriş yapmadiniz"}
+      </h1>
     </div>
   );
 }
