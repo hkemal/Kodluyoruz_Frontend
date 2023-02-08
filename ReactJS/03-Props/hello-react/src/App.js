@@ -12,13 +12,7 @@ const friends = [
 function App() {
   return (
     <div>
-      <User
-        name="Mehmet"
-        surname="Seven"
-        age={27}
-        isLoggedIn={true}
-        friends={friends}
-      />
+      <User name="Mehmet" surname="Seven" age={27} isLoggedIn={true} />
     </div>
   );
 }
