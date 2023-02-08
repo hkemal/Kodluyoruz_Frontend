@@ -3,6 +3,12 @@ import "./App.css";
 import Header from "./components/Header";
 import User from "./components/User";
 
+const friends = [
+  { id: 1, name: "Ahmet" },
+  { id: 2, name: "Tayfun" },
+  { id: 3, name: "Gökhan" },
+];
+
 function App() {
   return (
     <div>
@@ -11,7 +17,7 @@ function App() {
         surname="Seven"
         age={27}
         isLoggedIn={true}
-        friends={["Ahmet", "Tayfun", "Gökhan", "Ayşe", "Fatma"]}
+        friends={friends}
       />
     </div>
   );

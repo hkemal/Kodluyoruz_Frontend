@@ -1,10 +1,6 @@
-function User({ name, surname, age, isLoggedIn, friends }) {
-  const friendObjs = [
-    { id: 1, name: "Ahmet" },
-    { id: 2, name: "Tayfun" },
-    { id: 3, name: "Gökhan" },
-  ];
+import PropTypes from "prop-types";
 
+function User({ name, surname, age, isLoggedIn, friends }) {
   // return (
   //   <div>
   //     <h1>{isLoggedIn ? `${name} ${surname}  ${age}` : `Giriş yapmadiniz`}</h1>
@@ -17,11 +13,19 @@ function User({ name, surname, age, isLoggedIn, friends }) {
   return (
     <div>
       <h1>{isLoggedIn ? `${name} ${surname}  ${age}` : `Giriş yapmadiniz`}</h1>
-      {friendObjs.map((friend) => (
+      {friends.map((friend) => (
         <div key={friend.id}>{friend.name}</div>
       ))}
     </div>
   );
 }
+
+User.protoTypes = {
+  name: PropTypes.string,
+  surname: PropTypes.string,
+  isLoggedIn: PropTypes.bool,
+  age: PropTypes.number,
+  friends: PropTypes.array,
+};
 
 export default User;
