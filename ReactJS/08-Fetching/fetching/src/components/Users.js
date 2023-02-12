@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 function Users() {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // fetch
+  //   useEffect(() => {
+  //     fetch("https://jsonplaceholder.typicode.com/users")
+  //       .then((res) => res.json())
+  //       .then((data) => setUsers(data))
+  //       .catch((e) => console.log(e))
+  //       .finally(() => setIsLoading(false));
+  //   }, []);
+
+  // axios
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => setUsers(data))
+    axios("https://jsonplaceholder.typicode.com/users")
+      .then((res) => setUsers(res.data))
       .catch((e) => console.log(e))
       .finally(() => setIsLoading(false));
   }, []);
