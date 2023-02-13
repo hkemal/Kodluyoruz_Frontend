@@ -21,9 +21,9 @@ function App() {
         </ul>
 
         <Switch>
-          <Route path="/about" component={About} />
-          <Route path="/users" component={Users} />
-          <Route path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/users" component={Users} />
+          <Route exact path="/" component={Home} />
         </Switch>
       </div>
     </Router>
