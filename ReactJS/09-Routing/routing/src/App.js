@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import About from "./components/About";
 import Users from "./components/Users";
 import Home from "./components/Home";
+import User from "./components/User";
 
 function App() {
   return (
@@ -21,9 +22,10 @@ function App() {
         </ul>
 
         <Switch>
+          <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/users" component={Users} />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/user/:id" component={User} />
         </Switch>
       </div>
     </Router>
