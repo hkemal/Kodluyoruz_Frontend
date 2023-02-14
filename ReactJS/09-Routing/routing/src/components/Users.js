@@ -1,8 +1,7 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, Switch, Route, useRouteMatch } from "react-router-dom";
 import axios from "axios";
+
 import User from "./User";
 
 function Users() {

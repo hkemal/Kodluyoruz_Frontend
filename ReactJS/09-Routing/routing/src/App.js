@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   NavLink,
 } from "react-router-dom";
 import About from "./components/About";
@@ -15,29 +14,31 @@ function App() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <NavLink activeClassName="active" to="/" exact>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName="active" to="/about">
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName="active" to="/users">
-              Users
-            </NavLink>
-          </li>
-        </ul>
+        <nav>
+          <ul>
+            <li>
+              <NavLink activeClassName="active" to="/" exact>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink activeClassName="active" to="/about">
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink activeClassName="active" to="/users">
+                Users
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
 
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/users" component={Users} />
-          <Route exact path="*" component={Error404} />
+          <Route path="/about" component={About} />
+          <Route path="/users" component={Users} />
+          <Route path="*" component={Error404} />
         </Switch>
       </div>
     </Router>

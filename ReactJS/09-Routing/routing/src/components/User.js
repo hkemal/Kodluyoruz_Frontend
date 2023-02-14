@@ -1,13 +1,9 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
 function User() {
   const [loading, setLoading] = useState(true);
-
   const [user, setUser] = useState({});
 
   const { id } = useParams();
@@ -23,7 +19,10 @@ function User() {
       <h1>User Detail</h1>
       {loading && <div>Loading...</div>}
       {!loading && <code>{JSON.stringify(user)}</code>}
+
       <br />
+      <br />
+
       <Link to={`/users/${parseInt(id) + 1}`}>
         Next User ({parseInt(id) + 1})
       </Link>
