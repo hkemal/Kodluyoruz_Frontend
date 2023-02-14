@@ -9,6 +9,7 @@ import {
 import About from "./components/About";
 import Users from "./components/Users";
 import Home from "./components/Home";
+import Error404 from "./components/Error404";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/users" component={Users} />
+          <Route exact path="*" component={Error404} />
         </Switch>
       </div>
     </Router>
