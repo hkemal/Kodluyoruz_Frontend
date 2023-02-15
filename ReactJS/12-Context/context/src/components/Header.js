@@ -12,8 +12,6 @@ function Header() {
       <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
         Change Theme
       </button>
-      <br />
-      <br />
     </div>
   );
 }
