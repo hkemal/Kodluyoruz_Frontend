@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.header {
+  text-align: center;
+}
+
+.searchBar {
+  background-color: #eeeeee;
+}
+
+.searchInput {
+  margin: 0 30%;
+  width: 40%;
+  border-radius: 3px;
+}
+
+.searchButtons {
+  margin: 0 25%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.25px;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.specialSearches {
+  background-color: #7ee5da;
+}
+
+.info {
+  background-color: #70ccc2;
+}
+
+.contactUs {
+  display: flex;
+  background-color: #62b3aa;
+  align-items: center;
+  justify-content: center;
+}
