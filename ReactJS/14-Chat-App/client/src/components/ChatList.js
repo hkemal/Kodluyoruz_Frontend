@@ -10,7 +10,7 @@ function ChatList() {
     <div className={styles.chatlist}>
       <div>
         {messages.map((item, key) => (
-          <ChatItem item={item} />
+          <ChatItem key={key} item={item} />
         ))}
       </div>
     </div>
