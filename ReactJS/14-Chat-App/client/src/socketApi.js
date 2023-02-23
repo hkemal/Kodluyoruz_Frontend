@@ -9,3 +9,15 @@ export const init = () => {
   });
   socket.on("connect", () => console.log("Connected"));
 };
+
+export const sendMessage = (message) => {
+  if (socket) socket.emit("new-message", message);
+};
+
+export const subscribeChat = (callback) => {
+  if (!socket) return;
+  socket.on("receive-message", (message) => {
+    console.log("Yeni mesaj var", message);
+    callback(message);
+  });
+};
