@@ -21,3 +21,11 @@ export const subscribeChat = (callback) => {
     callback(message);
   });
 };
+
+export const subscribeInitialMessages = (callback) => {
+  if (!socket) return;
+  socket.on("message-list", (messages) => {
+    console.log("Initial", messages);
+    callback(messages);
+  });
+};
